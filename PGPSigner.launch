@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="de.softwareforge.pgpsigner.PGPSigner"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-secretring /home/henning/.gnupg/secring.gpg -publicring /home/henning/.gnupg/pubring.gpg -partyring /tmp/party.ring -signkey 0x9c85222b -mailserver mail.intermeta.de -keyserver pgpkeys.mit.edu"/>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="4"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="PGPSigner"/>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/PGPSigner"/>
+</listAttribute>
+<booleanAttribute key="org.eclipse.debug.core.appendEnvironmentVariables" value="true"/>
+<booleanAttribute key="org.eclipse.jdt.launching.STOP_IN_MAIN" value="true"/>
+</launchConfiguration>

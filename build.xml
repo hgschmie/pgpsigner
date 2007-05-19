@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="PGPSigner" default="package" basedir=".">
+
+    <property file="build.properties" />
+
+    <path id="classpath">
+        <fileset dir="${build.lib}">
+            <include name="**/*.jar"/>
+        </fileset>
+    </path>
+
+    <property name="one-jar.dist.dir" value="./dist"/>
+    <taskdef name="one-jar" classname="com.simontuffs.onejar.ant.OneJarTask"
+      classpath="onejar/one-jar-ant-task.jar" onerror="report"/>
+
+    <target name="clean">
+        <delete includeEmptyDirs="true" quiet="true">
+            <fileset dir="${target.dir}" defaultexcludes="no" />
+        </delete>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="${target.classes}" />
+        <javac srcdir="${build.src}"
+          destdir="${target.classes}"
+          encoding="UTF-8"
+          debug="on"
+          deprecation="on"
+          optimize="off"
+          classpathref="classpath"/>
+
+        <copy todir="${target.classes}" filtering="yes">
+          <fileset dir="${build.src}">
+            <exclude name="**/*.java" />
+          </fileset>
+        </copy>
+    </target>
+
+    <target name="package" depends="clean, compile">
+
+        <manifest file="${target.dir}/MANIFEST.MF">
+            <attribute name="Built-By" value="${user.name}"/>
+            <attribute name="One-Jar-Main-Class" value="de.softwareforge.pgpsigner.PGPSigner"/>
+        </manifest>
+
+        <one-jar destfile="${target.dir}/PGPSigner.jar" manifest="${target.dir}/MANIFEST.MF">
+            <main>
+                <fileset dir="${target.classes}"/>
+            </main>
+            <lib>
+                <fileset dir="${build.lib}">
+                    <include name="**/*.jar"/>
+                </fileset>
+            </lib>
+        </one-jar>
+
+    </target>
+</project>
