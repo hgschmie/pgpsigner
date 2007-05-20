@@ -7,6 +7,7 @@ import java.io.OutputStream;
 
 import javax.activation.DataSource;
 
+import org.apache.commons.cli.Option;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.MultiPartEmail;
@@ -25,6 +26,12 @@ public class MailCommand extends AbstractCommand implements Command
     public String getHelp()
     {
         return "mail signed keys to their owners";
+    }
+
+    @Override
+    public Option getCommandLineOption()
+    {
+        return null;
     }
 
     @Override
@@ -125,6 +132,7 @@ public class MailCommand extends AbstractCommand implements Command
                     }, name, "Signed Key " + key.getKeyId());
 
                     mail.send();
+                    key.setMailed(true);
 
                 }
                 catch (EmailException ee)

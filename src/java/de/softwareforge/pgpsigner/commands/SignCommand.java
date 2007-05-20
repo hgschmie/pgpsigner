@@ -2,6 +2,7 @@ package de.softwareforge.pgpsigner.commands;
 
 import java.util.Iterator;
 
+import org.apache.commons.cli.Option;
 import org.bouncycastle.openpgp.PGPPublicKey;
 import org.bouncycastle.openpgp.PGPSignature;
 import org.bouncycastle.openpgp.PGPSignatureGenerator;
@@ -27,6 +28,12 @@ public class SignCommand extends AbstractCommand implements Command
     public String getHelp()
     {
         return "sign keys on the party key ring";
+    }
+
+    @Override
+    public Option getCommandLineOption()
+    {
+        return null;
     }
 
     @Override

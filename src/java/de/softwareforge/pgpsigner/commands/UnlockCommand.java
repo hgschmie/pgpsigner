@@ -21,7 +21,7 @@ public class UnlockCommand extends AbstractCommand implements Command
 
     public String getHelp()
     {
-        return "unlock the current sign key.";
+        return "unlock the current sign key";
     }
 
     @Override

@@ -2,6 +2,7 @@ package de.softwareforge.pgpsigner.commands;
 
 import java.io.IOException;
 
+import org.apache.commons.cli.Option;
 import org.apache.commons.lang.StringUtils;
 
 import de.softwareforge.pgpsigner.key.PublicKey;
@@ -30,6 +31,12 @@ public class UploadCommand extends AbstractCommand implements Command
         }
 
         return true;
+    }
+
+    @Override
+    public Option getCommandLineOption()
+    {
+        return null;
     }
 
     @Override
