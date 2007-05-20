@@ -61,4 +61,90 @@
         </jar>
     </target>
 
+  <target name="build-package-tree" depends="clean,jar">
+
+    <mkdir dir="${target.dist}"/>
+    <mkdir dir="${target.dist}/${build.src}"/>
+    <mkdir dir="${target.dist}/${build.lib}"/>
+    <mkdir dir="${target.dist}/${target.dir}"/>
+
+    <copy todir="${target.dist}/${build.src}">
+      <fileset dir="${build.src}" />
+    </copy>
+
+    <copy todir="${target.dist}/${build.lib}">
+      <fileset dir="${build.lib}" />
+    </copy>
+
+    <copy todir="${target.dist}">
+      <fileset dir="${basedir}">
+        <include name="build.properties" />
+        <include name="build.xml" />
+        <include name="README" />
+        <include name="LICENSE" />
+        <include name="NOTICE" />
+        <include name="*.launch" />
+        <include name="*.sh" />
+        <include name=".classpath" />
+        <include name=".project" />
+      </fileset>
+    </copy>
+
+    <copy todir="${target.dist}/${target.dir}">
+      <fileset dir="${target.dir}">
+        <include name="*jar" />
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="package-zip"
+          depends="build-package-tree">
+
+    <!-- .zip built for Windows -->
+    <fixcrlf srcdir="${target.dist}" eol="crlf" eof="asis" encoding="ISO-8859-1">
+      <include name="**/*.html" />
+      <include name="**/*.java" />
+      <include name="**/*.properties" />
+      <include name="**/*.txt" />
+      <include name="**/*.wm" />
+      <include name="**/*.xml" />
+    </fixcrlf>
+
+    <delete file="${target.dir}/${app.name}-${app.version}-src.zip" quiet="true"/>
+    <zip zipfile="${target.dir}/${app.name}-${app.version}-src.zip" basedir="${target.dist}"
+         includes="**/*"/>
+
+    <checksum file="${target.dir}/${app.name}-${app.version}-src.zip" algorithm="md5" property="checksum.zip.md5"/>
+    <checksum file="${target.dir}/${app.name}-${app.version}-src.zip" algorithm="sha1" property="checksum.zip.sha1"/>
+    <echo message="${checksum.zip.md5} *${app.name}-${app.version}-src.zip" file="${target.dir}/${app.name}-${app.version}-src.zip.md5" />
+    <echo message="${checksum.zip.sha1} *${app.name}-${app.version}-src.zip" file="${target.dir}/${app.name}-${app.version}-src.zip.sha1" />
+  </target>
+
+  <target name="package-tgz"
+          depends="build-package-tree">
+
+    <!-- .tar.gz built for Unix -->
+    <fixcrlf srcdir="${target.dist}" eol="lf" eof="remove" encoding="ISO-8859-1">
+      <include name="**/*.html" />
+      <include name="**/*.java" />
+      <include name="**/*.properties" />
+      <include name="**/*.txt" />
+      <include name="**/*.wm" />
+      <include name="**/*.xml" />
+    </fixcrlf>
+
+    <delete file="${target.dir}/${app.name}-${app.version}-src.tar.gz" quiet="true"/>
+    <tar tarfile="${target.dir}/${app.name}-${app.version}-src.tar.gz" basedir="${target.dist}"
+         includes="**/*" longfile="gnu" compression="gzip" />
+
+    <checksum file="${target.dir}/${app.name}-${app.version}-src.tar.gz" algorithm="md5" property="checksum.tgz.md5"/>
+    <checksum file="${target.dir}/${app.name}-${app.version}-src.tar.gz" algorithm="sha1" property="checksum.tgz.sha1"/>
+    <echo message="${checksum.tgz.md5} *${app.name}-${app.version}-src.tar.gz" file="${target.dir}/${app.name}-${app.version}-src.tar.gz.md5" />
+    <echo message="${checksum.tgz.sha1} *${app.name}-${app.version}-src.tar.gz" file="${target.dir}/${app.name}-${app.version}-src.tar.gz.sha1" />
+  </target>
+
+  <target name="package"
+          depends="package-zip,package-tgz">
+  </target>
+
 </project>
