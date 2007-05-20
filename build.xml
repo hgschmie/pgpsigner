@@ -82,20 +82,20 @@
 
   <target name="build-package-tree" depends="clean,jar">
 
-    <mkdir dir="${target.dist}"/>
-    <mkdir dir="${target.dist}/${build.src}"/>
-    <mkdir dir="${target.dist}/${build.lib}"/>
-    <mkdir dir="${target.dist}/${target.dir}"/>
+    <mkdir dir="${target.dist}/${app.name}-${app.version}"/>
+    <mkdir dir="${target.dist}/${app.name}-${app.version}/${build.src}"/>
+    <mkdir dir="${target.dist}/${app.name}-${app.version}/${build.lib}"/>
+    <mkdir dir="${target.dist}/${app.name}-${app.version}/${target.dir}"/>
 
-    <copy todir="${target.dist}/${build.src}">
+    <copy todir="${target.dist}/${app.name}-${app.version}/${build.src}">
       <fileset dir="${build.src}" />
     </copy>
 
-    <copy todir="${target.dist}/${build.lib}">
+    <copy todir="${target.dist}/${app.name}-${app.version}/${build.lib}">
       <fileset dir="${build.lib}" />
     </copy>
 
-    <copy todir="${target.dist}">
+    <copy todir="${target.dist}/${app.name}-${app.version}">
       <fileset dir="${basedir}">
         <include name="build.properties" />
         <include name="build.xml" />
@@ -110,7 +110,7 @@
       </fileset>
     </copy>
 
-    <copy todir="${target.dist}/${target.dir}">
+    <copy todir="${target.dist}/${app.name}-${app.version}/${target.dir}">
       <fileset dir="${target.dir}">
         <include name="*jar" />
       </fileset>
@@ -121,7 +121,7 @@
           depends="build-package-tree">
 
     <!-- .zip built for Windows -->
-    <fixcrlf srcdir="${target.dist}" eol="crlf" eof="asis" encoding="ISO-8859-1">
+    <fixcrlf srcdir="${target.dist}/${app.name}-${app.version}" eol="crlf" eof="asis" encoding="ISO-8859-1">
       <include name="**/*.html" />
       <include name="**/*.java" />
       <include name="**/*.properties" />
@@ -144,7 +144,7 @@
           depends="build-package-tree">
 
     <!-- .tar.gz built for Unix -->
-    <fixcrlf srcdir="${target.dist}" eol="lf" eof="remove" encoding="ISO-8859-1">
+    <fixcrlf srcdir="${target.dist}/${app.name}-${app.version}" eol="lf" eof="remove" encoding="ISO-8859-1">
       <include name="**/*.html" />
       <include name="**/*.java" />
       <include name="**/*.properties" />
