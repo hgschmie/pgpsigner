@@ -3,7 +3,7 @@
 	<classpathentry kind="src" path="src/java"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/activation-1.1.jar"/>
-	<classpathentry kind="lib" path="lib/bcpg-jdk15-136.jar"/>
+	<classpathentry kind="lib" path="lib/bcpg-jdk15-136.jar" sourcepath="/home/java/src/crypto-136/src"/>
 	<classpathentry kind="lib" path="lib/bcprov-jdk15-136.jar"/>
 	<classpathentry kind="lib" path="lib/commons-cli-1.0.jar"/>
 	<classpathentry kind="lib" path="lib/commons-codec-1.3.jar"/>
