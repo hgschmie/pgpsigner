@@ -1,0 +1,9 @@
+target\/.*$
+\.jar$
+\.cmp$
+\.psd$
+\.wm$
+\.class$
+README$
+NOTICE$
+LICENSE$

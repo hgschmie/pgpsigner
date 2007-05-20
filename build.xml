@@ -103,6 +103,7 @@
         <include name="LICENSE" />
         <include name="NOTICE" />
         <include name="*.launch" />
+        <include name=".codewrestler.*" />
         <include name="*.sh" />
         <include name=".classpath" />
         <include name=".project" />
