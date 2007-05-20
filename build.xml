@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="PGPSigner" default="package" basedir=".">
+<project name="PGPSigner" default="jar" basedir=".">
 
     <property file="build.properties" />
 
@@ -9,10 +9,6 @@
             <include name="**/*.jar"/>
         </fileset>
     </path>
-
-    <property name="one-jar.dist.dir" value="./dist"/>
-    <taskdef name="one-jar" classname="com.simontuffs.onejar.ant.OneJarTask"
-      classpath="onejar/one-jar-ant-task.jar" onerror="report"/>
 
     <target name="clean">
         <delete includeEmptyDirs="true" quiet="true">
@@ -37,23 +33,32 @@
         </copy>
     </target>
 
-    <target name="package" depends="clean, compile">
+    <target name="jar" depends="compile">
+        <pathconvert property="jar.classpath" targetos="unix" dirsep="/" pathsep=" ">
+            <path refid="classpath" />
+        </pathconvert>
+        <mapper>
+          <globmapper from="${build.lib}" to="../${build.lib}" />
+        </mapper>
 
-        <manifest file="${target.dir}/MANIFEST.MF">
-            <attribute name="Built-By" value="${user.name}"/>
-            <attribute name="One-Jar-Main-Class" value="de.softwareforge.pgpsigner.PGPSigner"/>
-        </manifest>
+        <jar jarfile="${target.dir}/${app.name}-${app.version}.jar">
 
-        <one-jar destfile="${target.dir}/PGPSigner.jar" manifest="${target.dir}/MANIFEST.MF">
-            <main>
-                <fileset dir="${target.classes}"/>
-            </main>
-            <lib>
-                <fileset dir="${build.lib}">
-                    <include name="**/*.jar"/>
-                </fileset>
-            </lib>
-        </one-jar>
+            <metainf dir="${basedir}">
+                <include name="LICENSE"/>
+                <include name="NOTICE"/>
+            </metainf>
 
+            <fileset dir="${target.classes}"/>
+            <manifest>
+                <attribute name="Package" value="de.softwareforge.pgpsigner"/>
+                <attribute name="Build-Jdk" value="${java.version}"/>
+                <attribute name="Extension-Name" value="${app.name}"/>
+                <attribute name="Created-By" value="${user.name}"/>
+                <attribute name="Main-Class" value="${app.mainclass}"/>
+                <attribute name="Class-Path" value="${jar.classpath}" />
+            </manifest>
+            <indexjars refid="classpath" />
+        </jar>
     </target>
+
 </project>
