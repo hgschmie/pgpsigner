@@ -7,6 +7,13 @@ import de.softwareforge.pgpsigner.key.SecretKey;
 import de.softwareforge.pgpsigner.key.SecretKeyRing;
 import de.softwareforge.pgpsigner.util.DisplayHelpers;
 
+/**
+ * The "show" command.
+ *
+ * @author <a href="mailto:henning@schmiedehausen.org">Henning P. Schmiedehausen</a>
+ * @version $Id$
+ */
+
 public class ShowCommand extends AbstractCommand implements Command
 {
 

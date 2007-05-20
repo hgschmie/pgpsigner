@@ -7,6 +7,13 @@ import org.apache.commons.cli.Option;
 import de.softwareforge.pgpsigner.key.PublicKey;
 import de.softwareforge.pgpsigner.key.PublicKeyRing;
 
+/**
+ * The "list" command.
+ *
+ * @author <a href="mailto:henning@schmiedehausen.org">Henning P. Schmiedehausen</a>
+ * @version $Id$
+ */
+
 public class ListCommand extends AbstractCommand implements Command
 {
 

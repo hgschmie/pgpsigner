@@ -13,6 +13,13 @@ import org.bouncycastle.openpgp.PGPSecretKeyRing;
 import org.bouncycastle.openpgp.PGPSecretKeyRingCollection;
 import org.bouncycastle.openpgp.PGPUtil;
 
+/**
+ * Represents a PGP secret key ring file, offering methods for loading and finding keys.
+ *
+ * @author <a href="mailto:henning@schmiedehausen.org">Henning P. Schmiedehausen</a>
+ * @version $Id$
+ */
+
 public class SecretKeyRing extends KeyRing
 {
 

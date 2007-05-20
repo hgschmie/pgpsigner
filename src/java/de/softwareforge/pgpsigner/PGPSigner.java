@@ -39,6 +39,13 @@ import de.softwareforge.pgpsigner.commands.UploadCommand;
 import de.softwareforge.pgpsigner.commands.WriteCommand;
 import de.softwareforge.pgpsigner.util.AppContext;
 
+/**
+ * This is the PGPSigner main class.
+ *
+ * @author <a href="mailto:henning@schmiedehausen.org">Henning P. Schmiedehausen</a>
+ * @version $Id$
+ */
+
 public class PGPSigner
 {
 

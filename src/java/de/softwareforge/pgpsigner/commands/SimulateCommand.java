@@ -1,5 +1,12 @@
 package de.softwareforge.pgpsigner.commands;
 
+/**
+ * The "simulate" command.
+ *
+ * @author <a href="mailto:henning@schmiedehausen.org">Henning P. Schmiedehausen</a>
+ * @version $Id$
+ */
+
 public class SimulateCommand extends AbstractCommand implements Command
 {
 

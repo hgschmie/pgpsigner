@@ -6,6 +6,13 @@ import org.apache.commons.lang.StringUtils;
 
 import de.softwareforge.pgpsigner.util.DisplayHelpers;
 
+/**
+ * The "signevent" command.
+ *
+ * @author <a href="mailto:henning@schmiedehausen.org">Henning P. Schmiedehausen</a>
+ * @version $Id$
+ */
+
 public class SignEventCommand extends AbstractCommand implements Command
 {
 

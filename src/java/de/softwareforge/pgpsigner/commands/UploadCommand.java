@@ -8,6 +8,13 @@ import org.apache.commons.lang.StringUtils;
 import de.softwareforge.pgpsigner.key.PublicKey;
 import de.softwareforge.pgpsigner.util.HKPSender;
 
+/**
+ * The "upload" command.
+ *
+ * @author <a href="mailto:henning@schmiedehausen.org">Henning P. Schmiedehausen</a>
+ * @version $Id$
+ */
+
 public class UploadCommand extends AbstractCommand implements Command
 {
 

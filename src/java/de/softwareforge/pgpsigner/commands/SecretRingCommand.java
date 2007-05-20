@@ -8,6 +8,13 @@ import jline.SimpleCompletor;
 
 import org.apache.commons.cli.Option;
 
+/**
+ * The "secretring" command.
+ *
+ * @author <a href="mailto:henning@schmiedehausen.org">Henning P. Schmiedehausen</a>
+ * @version $Id$
+ */
+
 public class SecretRingCommand extends AbstractCommand implements Command
 {
 

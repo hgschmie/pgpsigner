@@ -14,6 +14,13 @@ import de.softwareforge.pgpsigner.key.KeyId;
 import de.softwareforge.pgpsigner.key.PublicKey;
 import de.softwareforge.pgpsigner.util.DisplayHelpers;
 
+/**
+ * The "write" command.
+ *
+ * @author <a href="mailto:henning@schmiedehausen.org">Henning P. Schmiedehausen</a>
+ * @version $Id$
+ */
+
 public class WriteCommand extends AbstractCommand implements Command
 {
 

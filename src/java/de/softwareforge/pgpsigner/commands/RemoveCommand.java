@@ -10,6 +10,13 @@ import org.apache.commons.cli.Option;
 import de.softwareforge.pgpsigner.jline.PartyKeyCompletor;
 import de.softwareforge.pgpsigner.key.KeyId;
 
+/**
+ * The "remove" command.
+ *
+ * @author <a href="mailto:henning@schmiedehausen.org">Henning P. Schmiedehausen</a>
+ * @version $Id$
+ */
+
 public class RemoveCommand extends AbstractCommand implements Command
 {
 

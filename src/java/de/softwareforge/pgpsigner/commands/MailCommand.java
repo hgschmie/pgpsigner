@@ -15,6 +15,13 @@ import org.apache.commons.mail.MultiPartEmail;
 import de.softwareforge.pgpsigner.key.PublicKey;
 import de.softwareforge.pgpsigner.key.SecretKey;
 
+/**
+ * The "mail" command.
+ *
+ * @author <a href="mailto:henning@schmiedehausen.org">Henning P. Schmiedehausen</a>
+ * @version $Id$
+ */
+
 public class MailCommand extends AbstractCommand implements Command
 {
 

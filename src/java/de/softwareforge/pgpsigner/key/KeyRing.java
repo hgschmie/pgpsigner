@@ -5,6 +5,13 @@ import java.util.Set;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
 
+/**
+ * Base class for public and secret key ring, containing common methods.
+ *
+ * @author <a href="mailto:henning@schmiedehausen.org">Henning P. Schmiedehausen</a>
+ * @version $Id$
+ */
+
 public abstract class KeyRing
 {
 

@@ -5,6 +5,13 @@ import java.util.Set;
 
 import de.softwareforge.pgpsigner.key.KeyId;
 
+/**
+ * A generic key completor that works on a set of KeyId objects.
+ *
+ * @author <a href="mailto:henning@schmiedehausen.org">Henning P. Schmiedehausen</a>
+ * @version $Id$
+ */
+
 public abstract class AbstractKeyCompletor
 {
 

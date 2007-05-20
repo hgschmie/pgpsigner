@@ -2,6 +2,13 @@ package de.softwareforge.pgpsigner.commands;
 
 import org.apache.commons.cli.Option;
 
+/**
+ * The "reset" command.
+ *
+ * @author <a href="mailto:henning@schmiedehausen.org">Henning P. Schmiedehausen</a>
+ * @version $Id$
+ */
+
 public class ResetCommand extends AbstractCommand implements Command
 {
 

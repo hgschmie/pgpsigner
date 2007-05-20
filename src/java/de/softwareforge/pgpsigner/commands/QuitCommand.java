@@ -4,6 +4,13 @@ import org.apache.commons.cli.Option;
 
 import de.softwareforge.pgpsigner.PGPSigner;
 
+/**
+ * The "quit" command.
+ *
+ * @author <a href="mailto:henning@schmiedehausen.org">Henning P. Schmiedehausen</a>
+ * @version $Id$
+ */
+
 public class QuitCommand extends AbstractCommand implements Command
 {
 

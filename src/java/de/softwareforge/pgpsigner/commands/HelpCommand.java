@@ -5,6 +5,13 @@ import org.apache.commons.cli.HelpFormatter;
 
 import de.softwareforge.pgpsigner.PGPSigner;
 
+/**
+ * The "help" command.
+ *
+ * @author <a href="mailto:henning@schmiedehausen.org">Henning P. Schmiedehausen</a>
+ * @version $Id$
+ */
+
 public class HelpCommand extends AbstractCommand implements Command
 {
 

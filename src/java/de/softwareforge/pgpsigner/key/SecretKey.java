@@ -1,6 +1,3 @@
-/**
- *
- */
 package de.softwareforge.pgpsigner.key;
 
 import java.security.NoSuchProviderException;
@@ -11,6 +8,13 @@ import org.bouncycastle.openpgp.PGPException;
 import org.bouncycastle.openpgp.PGPPrivateKey;
 import org.bouncycastle.openpgp.PGPPublicKey;
 import org.bouncycastle.openpgp.PGPSecretKey;
+
+/**
+ * A wrapper around a PGPSecretKey object to manage application state information.
+ *
+ * @author <a href="mailto:henning@schmiedehausen.org">Henning P. Schmiedehausen</a>
+ * @version $Id$
+ */
 
 public class SecretKey extends Key
 {

@@ -4,6 +4,13 @@ import java.util.Iterator;
 
 import org.apache.commons.lang.StringUtils;
 
+/**
+ * Base class for secret and public key class.
+ *
+ * @author <a href="mailto:henning@schmiedehausen.org">Henning P. Schmiedehausen</a>
+ * @version $Id$
+ */
+
 public abstract class Key
 {
 

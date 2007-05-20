@@ -16,6 +16,15 @@ import org.apache.commons.io.IOUtils;
 
 import de.softwareforge.pgpsigner.PGPSigner;
 
+/**
+ * A simple HKP protocol uploader.
+ *
+ * @TODO: Needs some work re. error handling.
+ *
+ * @author <a href="mailto:henning@schmiedehausen.org">Henning P. Schmiedehausen</a>
+ * @version $Id$
+ */
+
 public class HKPSender
 {
 

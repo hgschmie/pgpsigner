@@ -4,6 +4,13 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.builder.CompareToBuilder;
 import org.apache.commons.lang.builder.EqualsBuilder;
 
+/**
+ * Represents a Key Id for managing keys on the various key rings.
+ *
+ * @author <a href="mailto:henning@schmiedehausen.org">Henning P. Schmiedehausen</a>
+ * @version $Id$
+ */
+
 public class KeyId implements Comparable<KeyId>
 {
 

@@ -4,6 +4,13 @@ import java.util.Iterator;
 
 import de.softwareforge.pgpsigner.key.Key;
 
+/**
+ * Some helper methods to display values and key related data.
+ *
+ * @author <a href="mailto:henning@schmiedehausen.org">Henning P. Schmiedehausen</a>
+ * @version $Id$
+ */
+
 public final class DisplayHelpers
 {
 

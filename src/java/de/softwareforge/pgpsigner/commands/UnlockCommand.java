@@ -11,6 +11,13 @@ import org.bouncycastle.openpgp.PGPException;
 import de.softwareforge.pgpsigner.key.SecretKey;
 import de.softwareforge.pgpsigner.util.DisplayHelpers;
 
+/**
+ * The "unlock" command.
+ *
+ * @author <a href="mailto:henning@schmiedehausen.org">Henning P. Schmiedehausen</a>
+ * @version $Id$
+ */
+
 public class UnlockCommand extends AbstractCommand implements Command
 {
 

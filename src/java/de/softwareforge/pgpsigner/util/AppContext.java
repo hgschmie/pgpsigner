@@ -14,6 +14,13 @@ import de.softwareforge.pgpsigner.key.PublicKeyRing;
 import de.softwareforge.pgpsigner.key.SecretKey;
 import de.softwareforge.pgpsigner.key.SecretKeyRing;
 
+/**
+ * The application context stores all state information for the PGPSigner.
+ *
+ * @author <a href="mailto:henning@schmiedehausen.org">Henning P. Schmiedehausen</a>
+ * @version $Id$
+ */
+
 public class AppContext
 {
 

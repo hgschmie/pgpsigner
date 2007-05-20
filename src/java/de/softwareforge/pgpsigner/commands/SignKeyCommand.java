@@ -12,6 +12,13 @@ import de.softwareforge.pgpsigner.key.KeyId;
 import de.softwareforge.pgpsigner.key.SecretKey;
 import de.softwareforge.pgpsigner.util.DisplayHelpers;
 
+/**
+ * The "signkey" command.
+ *
+ * @author <a href="mailto:henning@schmiedehausen.org">Henning P. Schmiedehausen</a>
+ * @version $Id$
+ */
+
 public class SignKeyCommand extends AbstractCommand implements Command
 {
 
