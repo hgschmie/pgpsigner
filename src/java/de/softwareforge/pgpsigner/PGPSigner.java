@@ -20,6 +20,7 @@ package de.softwareforge.pgpsigner;
  *
  */
 
+import java.security.Provider;
 import java.security.Security;
 import java.util.ArrayList;
 import java.util.List;
@@ -86,6 +87,32 @@ public class PGPSigner
 
     public static void main(final String[] args)
     {
+        Security.addProvider(new BouncyCastleProvider());
+
+        /*
+         * Debug Code. Add a Security Manager and a policy. 
+         * Suggested by Simon Tuffs, unfortunately does not really help
+         * the one-jar problem.
+
+        if (System.getSecurityManager() == null) {
+            String policy = System.getProperty("java.security.policy");
+
+            if (policy == null) {
+                System.setProperty("java.security.policy", "onejar:/pgpsigner.policy");
+            }
+            System.setSecurityManager(new SecurityManager());
+        }
+        */
+
+        /*
+         * DEBUG: Display all registered Security providers
+         *
+        Provider[] providers = Security.getProviders();
+        for (int i=0; i < providers.length; i++) {
+            System.out.println(providers[i].toString());
+        }
+        */
+
         PGPSigner pgpSigner = new PGPSigner(args);
 
         try
@@ -94,6 +121,7 @@ public class PGPSigner
         }
         catch (RuntimeException re)
         {
+            re.printStackTrace();
             throw re;
         }
         catch (Exception e)
@@ -105,9 +133,6 @@ public class PGPSigner
 
     private PGPSigner(final String[] args)
     {
-
-        Security.addProvider(new BouncyCastleProvider());
-
         registerCommand(new HelpCommand());
         registerCommand(new QuitCommand());
         registerCommand(new ResetCommand());
