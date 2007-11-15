@@ -70,7 +70,7 @@ public class MailCommand extends AbstractCommand implements Command
             return false;
         }
 
-        if (StringUtils.isEmpty(getContext().getMailServer()))
+        if (StringUtils.isEmpty(getContext().getMailServerHost()))
         {
             System.out.println("Mail server must be set!");
             return false;
@@ -119,7 +119,8 @@ public class MailCommand extends AbstractCommand implements Command
                     System.out.println("Sending Key " + key.getKeyId() + " to " + recipient);
 
                     MultiPartEmail mail = new MultiPartEmail();
-                    mail.setHostName(getContext().getMailServer());
+                    mail.setHostName(getContext().getMailServerHost());
+                    mail.setSmtpPort(getContext().getMailServerPort());
                     mail.setFrom(senderMail, senderName);
                     mail.addTo(recipient);
 

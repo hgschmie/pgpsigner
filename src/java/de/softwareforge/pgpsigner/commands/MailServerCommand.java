@@ -59,7 +59,7 @@ public class MailServerCommand extends AbstractCommand implements Command
     {
         if (args.length < 2)
         {
-            System.out.println("Current mail server is " + DisplayHelpers.showNullValue(getContext().getMailServer()));
+            System.out.println("Current mail server is " + DisplayHelpers.showNullValue(getContext().getMailServerHost()));
             return false;
         }
 
@@ -69,7 +69,16 @@ public class MailServerCommand extends AbstractCommand implements Command
     @Override
     public void executeInteractiveCommand(final String[] args)
     {
-        getContext().setMailServer(args[1]);
+        String mailServerHost = args[1];
+        String mailServerPort = "25";
+
+        int colonIndex = mailServerHost.indexOf(':');
+        if (colonIndex > -1) {
+            mailServerPort = mailServerHost.substring(colonIndex +1);
+            mailServerHost = mailServerHost.substring(0, colonIndex);
+        }
+        getContext().setMailServerHost(mailServerHost);
+        getContext().setMailServerPort(Integer.parseInt(mailServerPort));
 
         for (PublicKey key : getContext().getPartyRing().getVisibleKeys().values())
         {

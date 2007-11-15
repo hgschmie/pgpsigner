@@ -57,7 +57,9 @@ public class AppContext
 
     private SecretKey signKey = null;
 
-    private String mailServer = null;
+    private String mailServerHost = null;
+
+    private int mailServerPort = -1;
 
     private String keyServer = null;
 
@@ -73,7 +75,7 @@ public class AppContext
         this.publicRing.clear();
         this.secretRing.clear();
         this.signKey = null;
-        this.mailServer = null;
+        this.mailServerHost = null;
         this.keyServer = null;
         this.signEvent = null;
         this.simulation = false;
@@ -166,14 +168,27 @@ public class AppContext
         this.keyServer = keyServer;
     }
 
-    public String getMailServer()
+    public String getMailServerHost()
     {
-        return this.mailServer;
+        return this.mailServerHost;
     }
 
-    public void setMailServer(final String mailServer)
+    public void setMailServerHost(final String mailServerHost)
     {
-        this.mailServer = mailServer;
+        this.mailServerHost = mailServerHost;
+    }
+
+    public int getMailServerPort()
+    {
+        if (this.mailServerPort == -1) {
+            return 25; // SMTP
+        }
+        return this.mailServerPort;
+    }
+
+    public void setMailServerPort(final int mailServerPort)
+    {
+        this.mailServerPort = mailServerPort;
     }
 
     public void updatePartyRing(boolean resetAllFlags)

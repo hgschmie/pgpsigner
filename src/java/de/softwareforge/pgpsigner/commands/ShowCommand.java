@@ -69,7 +69,7 @@ public class ShowCommand extends AbstractCommand implements Command
                 + ((partyRing.size() > 0) ? " (" + partyRing.size() + " Keys loaded)" : ""));
         System.out.println("Sign key:    " + DisplayHelpers.showNullValue(DisplayHelpers.showKey(signKey))
                 + (signKey != null && signKey.isUnlocked() ? " (unlocked)" : ""));
-        System.out.println("Mail Server: " + DisplayHelpers.showNullValue(getContext().getMailServer()));
+        System.out.println("Mail Server: " + DisplayHelpers.showNullValue(getContext().getMailServerHost())+ ":" + getContext().getMailServerPort());
         System.out.println("Key Server:  " + DisplayHelpers.showNullValue(getContext().getKeyServer()));
         System.out.println("Sign Event:  " + DisplayHelpers.showNullValue(getContext().getSignEvent()));
         System.out.println("Simulation:  " + (getContext().isSimulation() ? "yes" : "no"));
