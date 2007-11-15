@@ -31,4 +31,4 @@ if [ ! -e "target/${APPNAME}-${APPVERSION}.jar" ]; then
    exit 1
 fi
 
-java -jar target/${APPNAME}-${APPVERSION}.jar "$@"
+java -Xmx512m -Xms128m -jar target/${APPNAME}-${APPVERSION}.jar "$@"
