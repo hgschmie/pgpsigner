@@ -1,9 +1,5 @@
-			      PGPSigner
-			      =========
-
-
-Synopsis
-========
+PGPSigner
+=========
 
 This program helps you to manage, sign and send out PGP keys after a
 PGP/GPG key signing event.
@@ -23,7 +19,8 @@ Contact
 =======
 
 If you have questions, patches or anything else concerning the
-PGPSigner application, please contact me at <henning@schmiedehausen.org>
+PGPSigner application, please contact me through the github issue
+tracker.
 
 If this program spawns enough interest, I might set up a mailing list
 for it.
@@ -40,10 +37,10 @@ To use this application, you must probably install the "Java
 Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy
 Files" for the Sun JCE. If you encounter the following error:
 
-java.lang.SecurityException: Unsupported keysize or algorithm parameters, 
+`java.lang.SecurityException: Unsupported keysize or algorithm parameters,`
 
 then this is most likely the problem. Download these for the Sun JDK
-1.5 at http://java.sun.com/javase/downloads/index_jdk5.jsp (scroll
+1.5 at <http://java.sun.com/javase/downloads/index_jdk5.jsp> (scroll
 down to the bottom of the page). 
 
 
@@ -53,14 +50,12 @@ Requirements and Download
 This application is written in Java and requires at least Java 1.5 to
 run. 
 
-It is currently only available in source form from the Subversion
+It is currently only available in source form from <http://github.com/hgschmie/pgpsigner>
 repository or as a distribution archive. You need a JDK 1.5 or better
 and Apache ant 1.6 or better to build this application.
 
-http://www.softwareforge.de/releases/pgpsigner/PGPSigner-1.0-src.tar.gz
-http://www.softwareforge.de/releases/pgpsigner/PGPSigner-1.0-src.zip
-http://svn.softwareforge.de/svn/opensource/pgpsigner/tags/PGPSigner-1.0
-
+<http://www.softwareforge.de/releases/pgpsigner/PGPSigner-1.0-src.tar.gz>
+<http://www.softwareforge.de/releases/pgpsigner/PGPSigner-1.0-src.zip>
 
 Release History
 ===============
@@ -103,7 +98,7 @@ Execution
 
 PGPSigner includes a shell script to run it. Please run 
 
-./pgpsigner.sh <options> 
+`./pgpsigner.sh <options>`
 
 to execute the application. You must compile the application first by 
 executing "ant jar" from the root directory.
@@ -114,7 +109,7 @@ Usage
 
 Signing PGP keys at a key signing party is normally done using a
 paper-and-pencil approach. The well known Key signing party HOWTO
-(http://cryptnet.net/fdp/crypto/keysigning_party/en/keysigning_party.html)
+(<http://cryptnet.net/fdp/crypto/keysigning_party/en/keysigning_party.html>)
 shows you how to sign keys manually using gpg, which is cumbersome and
 error prone if you have lots of keys to sign.
 
@@ -128,7 +123,7 @@ the PGPSigner application.
 
 After starting the program, it will show the user prompt 
 
-PGPSigner>
+`PGPSigner>`
 
 You can request a list of the available commands by entering
 "help". Pressing the <TAB> key shows all commands and offers command
@@ -236,9 +231,9 @@ list - list the keys available for signing
 If a party key ring has been loaded, it displays all the keys that are
 eligible for signing. The flags shown in the second column are as follows:
 
-S - The key has been signed with the current sign key
-U - The key has been uploaded to the current key server
-M - The key was mailed to its owner
+* S - The key has been signed with the current sign key
+* U - The key has been uploaded to the current key server
+* M - The key was mailed to its owner
 
 
 unlock - unlock the current sign key
