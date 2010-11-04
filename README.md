@@ -54,8 +54,8 @@ It is currently only available in source form from <http://github.com/hgschmie/p
 repository or as a distribution archive. You need a JDK 1.5 or better
 and Apache ant 1.6 or better to build this application.
 
-<http://www.softwareforge.de/releases/pgpsigner/PGPSigner-1.0-src.tar.gz>
-<http://www.softwareforge.de/releases/pgpsigner/PGPSigner-1.0-src.zip>
+* <http://www.softwareforge.de/releases/pgpsigner/PGPSigner-1.0-src.tar.gz>
+* <http://www.softwareforge.de/releases/pgpsigner/PGPSigner-1.0-src.zip>
 
 Release History
 ===============
