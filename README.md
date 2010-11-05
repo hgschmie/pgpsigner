@@ -267,6 +267,15 @@ publicring (*) - sets the public key ring - Filename completion
 This command selects the public key ring which is used to verify which
 keys on the party ring have already signed with the sign key.
 
+The public key ring which can be used by PGPSigner is an Ascii file.
+
+If you are using gpg2, the command to create the file would be
+
+gpg2 --export -a "your name">  public.key
+
+where of course you replace "your name" by the name entered with the keys.
+
+
 This command offers file name completion with the <TAB> key.
 
 
@@ -277,6 +286,14 @@ This command selects the secret key ring containing one or more keys
 available for key signing.
 
 This command offers file name completion with the <TAB> key.
+
+The private key ring which can be used by PGPSigner is an Ascii file.
+
+If you are using gpg2, the command to create the file would be
+
+gpg2 --export-secret-key -a "your name">  private.key
+
+where of course you replace "your name" by the name entered with the keys.
 
 
 signkey (*) - sets the signing key - Secret key id completion
